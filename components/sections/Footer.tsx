@@ -38,11 +38,7 @@ const socialLinks = [
 ]
 
 export function Footer() {
-  const [year, setYear] = React.useState(2026)
-  
-  React.useEffect(() => {
-    setYear(new Date().getFullYear())
-  }, [])
+  const year = new Date().getFullYear()
 
   return (
     <footer className="bg-white dark:bg-[#020617] border-t border-gray-200 dark:border-white/5 pt-20 pb-10 transition-colors">
@@ -52,7 +48,7 @@ export function Footer() {
             <Link href="/" className="text-2xl font-black text-blue-600 dark:text-blue-500 mb-6 block">
               Leadstrack
             </Link>
-            <p className="text-gray-600 dark:text-gray-400 max-w-xs mb-8 text-sm font-medium leading-relaxed">
+            <p className="text-slate-700 dark:text-slate-400 max-w-xs mb-8 text-sm font-semibold leading-relaxed">
               The all-in-one elite CRM and automation platform designed to help you capture, track, and convert every lead with precision.
             </p>
             <div className="flex items-center gap-5">
@@ -75,7 +71,7 @@ export function Footer() {
             <ul className="space-y-2">
               {footerLinks.product.map((link) => (
                 <li key={link.name}>
-                  <Link href={link.href} className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500 text-sm transition-colors">
+                  <Link href={link.href} className="text-slate-700 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-500 text-sm font-medium transition-colors">
                     {link.name}
                   </Link>
                 </li>
@@ -90,7 +86,7 @@ export function Footer() {
             <ul className="space-y-2">
               {footerLinks.solutions.map((link) => (
                 <li key={link.name}>
-                  <Link href={link.href} className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500 text-sm transition-colors">
+                  <Link href={link.href} className="text-slate-700 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-500 text-sm font-medium transition-colors">
                     {link.name}
                   </Link>
                 </li>
@@ -105,7 +101,7 @@ export function Footer() {
             <ul className="space-y-2">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
-                  <Link href={link.href} className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500 text-sm transition-colors">
+                  <Link href={link.href} className="text-slate-700 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-500 text-sm font-medium transition-colors">
                     {link.name}
                   </Link>
                 </li>
@@ -115,13 +111,13 @@ export function Footer() {
         </div>
         
         <div className="pt-8 border-t border-gray-100 dark:border-gray-900 flex flex-col md:flex-row justify-between items-center gap-4">
-           <p className="text-gray-500 dark:text-gray-500 text-xs">
+           <p className="text-slate-600 dark:text-slate-500 text-xs font-semibold">
               © {year} Leadstrack. All rights reserved.
            </p>
-           <div className="flex items-center gap-6 text-xs text-gray-500 dark:text-gray-500">
-              <Link href="/privacy" className="hover:text-blue-600 transition-colors">Privacy</Link>
-              <Link href="/terms" className="hover:text-blue-600 transition-colors">Terms</Link>
-              <Link href="/cookies" className="hover:text-blue-600 transition-colors">Cookies</Link>
+           <div className="flex items-center gap-6 text-xs text-slate-600 dark:text-slate-500 font-semibold">
+              <Link href="/privacy" className="hover:text-blue-600 dark:hover:text-blue-500 transition-colors">Privacy</Link>
+              <Link href="/terms" className="hover:text-blue-600 dark:hover:text-blue-500 transition-colors">Terms</Link>
+              <Link href="/cookies" className="hover:text-blue-600 dark:hover:text-blue-500 transition-colors">Cookies</Link>
            </div>
         </div>
       </Container>

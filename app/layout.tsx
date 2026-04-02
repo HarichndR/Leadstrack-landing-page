@@ -6,6 +6,13 @@ import { constructMetadata } from "@/lib/seo";
 
 const inter = Inter({ subsets: ["latin"] });
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  userScalable: true,
+};
+
 export const metadata: Metadata = constructMetadata();
 
 export default function RootLayout({

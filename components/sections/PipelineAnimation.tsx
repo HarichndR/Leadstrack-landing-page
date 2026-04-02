@@ -45,12 +45,6 @@ export function PipelineAnimation() {
              
              {/* Dropping Pipe (at the end) */}
              <div className="absolute right-0 top-0 w-[40px] h-[220px] bg-gradient-to-r from-slate-300 via-slate-100 to-slate-400 dark:from-slate-800 dark:via-slate-700 dark:to-slate-900 border-x border-slate-400 dark:border-slate-600 shadow-[inset_0_-10px_20px_rgba(0,0,0,0.1)] dark:shadow-[inset_0_-10px_20px_rgba(0,0,0,0.4)] z-[-1] rounded-b-3xl">
-                {/* Vertical flow light inside */}
-                <motion.div 
-                   className="w-2 h-[200%] absolute left-1/2 -translate-x-1/2 bg-gradient-to-b from-transparent via-green-400 dark:via-green-500 to-transparent blur-[2px]"
-                   animate={{ y: ["-100%", "0%"] }}
-                   transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-                />
              </div>
 
              {/* The Rolling Lead Coin */}

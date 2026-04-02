@@ -12,15 +12,15 @@ export function Hero() {
   return (
     <section id="hero" className="relative pt-32 pb-24 overflow-hidden bg-slate-50 dark:bg-slate-950 transition-colors">
 
-      {/* Background Dust - Multi-colors mixed and fully blurred like white/dust */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-[10%] -left-[10%] w-[40%] h-[40%] rounded-full bg-purple-400/30 dark:bg-purple-600/20 blur-[140px] mix-blend-multiply dark:mix-blend-screen opacity-70" />
-        <div className="absolute top-[20%] -right-[10%] w-[40%] h-[40%] rounded-full bg-blue-400/30 dark:bg-blue-600/20 blur-[140px] mix-blend-multiply dark:mix-blend-screen opacity-70" />
-        <div className="absolute -bottom-[10%] left-[20%] w-[50%] h-[50%] rounded-full bg-emerald-300/20 dark:bg-emerald-600/10 blur-[140px] mix-blend-multiply dark:mix-blend-screen opacity-70" />
-        <div className="absolute top-[40%] left-[40%] w-[30%] h-[30%] rounded-full bg-amber-300/20 dark:bg-amber-600/10 blur-[140px] mix-blend-multiply dark:mix-blend-screen opacity-60" />
+      {/* Background Dust - Multi-colors mixed and optimized with lower blur for peak performance */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none will-change-[opacity]">
+        <div className="absolute -top-[10%] -left-[10%] w-[40%] h-[40%] rounded-full bg-purple-400/20 dark:bg-purple-600/10 blur-[80px] opacity-70" />
+        <div className="absolute top-[20%] -right-[10%] w-[40%] h-[40%] rounded-full bg-blue-400/20 dark:bg-blue-600/10 blur-[80px] opacity-70" />
+        <div className="absolute -bottom-[10%] left-[20%] w-[50%] h-[50%] rounded-full bg-emerald-300/10 dark:bg-emerald-600/5 blur-[80px] opacity-70" />
+        <div className="absolute top-[40%] left-[40%] w-[30%] h-[30%] rounded-full bg-amber-300/10 dark:bg-amber-600/5 blur-[80px] opacity-60" />
 
-        {/* Very subtle noise overlay for 'dust' texture */}
-        <div className="absolute inset-0 opacity-[0.02] dark:opacity-[0.03]" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E")' }} />
+        {/* Optimized noise overlay */}
+        <div className="absolute inset-0 opacity-[0.02] dark:opacity-[0.03] bg-[radial-gradient(#000_1px,transparent_1px)] bg-[length:40px_40px] [mask-image:radial-gradient(ellipse_at_center,black,transparent)]" />
       </div>
 
       <Container>
@@ -30,7 +30,7 @@ export function Hero() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="mb-8 relative z-20"
+            className="mb-8 relative z-20 will-change-[transform,opacity]"
           >
             <span className="inline-flex items-center rounded-full px-5 py-2 text-xs font-bold bg-white text-slate-800 border border-slate-200 dark:bg-slate-900 dark:text-slate-200 dark:border-slate-800 shadow-[0_2px_10px_-3px_rgba(0,0,0,0.05),inset_0_1px_0_rgba(255,255,255,1)] dark:shadow-[0_2px_10px_-3px_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.05)]">
               <span className="flex h-2 w-2 rounded-full bg-blue-600 mr-2 shadow-[0_0_8px_rgba(37,99,235,0.8)]"></span>
@@ -38,15 +38,15 @@ export function Hero() {
             </span>
           </motion.div>
 
-          {/* Epic Main Headline Container with Authentic Blurred Reflection */}
+          {/* Epic Main Headline Container with Optimized Reflection */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="mb-20 relative w-full flex flex-col items-center"
+            className="mb-20 relative w-full flex flex-col items-center will-change-[transform,opacity]"
           >
              <h1 
-               className="text-7xl sm:text-8xl lg:text-8xl lg:text-[7.5rem] font-black tracking-[-0.04em] text-slate-900 dark:text-white leading-[1.05] z-20 relative drop-shadow-lg"
+               className="text-5xl sm:text-6xl lg:text-7xl font-black tracking-[-0.04em] text-slate-900 dark:text-white leading-[1.05] z-20 relative drop-shadow-lg"
              >
                Stop Losing Leads.<br />
                <span className="text-transparent bg-clip-text bg-gradient-to-br from-blue-600 via-indigo-600 to-blue-700 dark:from-blue-400 dark:via-cyan-400 dark:to-blue-500 drop-shadow-sm">
@@ -54,12 +54,12 @@ export function Hero() {
                </span>
              </h1>
              
-             {/* Authentic Blurred Glass Floor Reflection */}
+             {/* Optimized Blurred Floor Reflection */}
              <h1 
-               className="absolute top-[100%] left-0 w-full text-7xl sm:text-8xl lg:text-8xl lg:text-[7.5rem] font-black tracking-[-0.04em] text-slate-900 dark:text-white leading-[1.05] origin-top opacity-30 dark:opacity-40 select-none pointer-events-none blur-[6px] dark:blur-[8px] z-10"
+               className="absolute top-[100%] left-0 w-full text-5xl sm:text-6xl lg:text-7xl font-black tracking-[-0.04em] text-slate-900 dark:text-white leading-[1.05] origin-top opacity-20 dark:opacity-30 select-none pointer-events-none blur-[6px] z-10"
                style={{ 
                  transform: "scaleY(-1) translateY(4px)",
-                 WebkitMaskImage: "linear-gradient(to bottom, rgba(0,0,0,0.85) 0%, transparent 40%)" 
+                 WebkitMaskImage: "linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, transparent 40%)" 
                }}
                aria-hidden="true"
              >
@@ -103,13 +103,13 @@ export function Hero() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            className="w-full max-w-4xl mt-20 relative hidden md:flex items-center justify-center"
+            className="w-full max-w-4xl mt-20 relative hidden md:flex items-center justify-center will-change-[transform,opacity]"
           >
             {/* Staggered Cards Container */}
             <div className="relative w-full h-[320px] flex justify-center">
 
               {/* 1. Lead Capture */}
-              <div className="absolute top-8 left-4 bg-white dark:bg-slate-900 border border-slate-200 border-b-4 dark:border-slate-800 p-5 rounded-2xl shadow-[0_15px_35px_-5px_rgba(0,0,0,0.1),inset_0_1px_0_rgba(255,255,255,1)] dark:shadow-[0_15px_35px_-5px_rgba(0,0,0,0.4),inset_0_1px_0_rgba(255,255,255,0.05)] flex items-center gap-4 z-10 w-80 animate-[bounce_4s_ease-in-out_infinite_reverse]">
+              <div className="absolute top-8 left-4 bg-white dark:bg-slate-900 border border-slate-200 border-b-4 dark:border-slate-800 p-5 rounded-2xl shadow-[0_15px_35px_-5px_rgba(0,0,0,0.1),inset_0_1px_0_rgba(255,255,255,1)] dark:shadow-[0_15px_35px_-5px_rgba(0,0,0,0.4),inset_0_1px_0_rgba(255,255,255,0.05)] flex items-center gap-4 z-10 w-80 animate-[bounce_4s_ease-in-out_infinite_reverse] will-change-transform">
                 <div className="w-14 h-14 bg-blue-50 dark:bg-slate-800 rounded-xl flex items-center justify-center border border-blue-100 border-b-2 dark:border-slate-700 shrink-0 shadow-inner">
                   <UserPlus className="w-6 h-6 text-blue-600" />
                 </div>
@@ -120,7 +120,7 @@ export function Hero() {
               </div>
 
               {/* 2. Auto WhatsApp */}
-              <div className="absolute top-24 right-4 bg-white dark:bg-slate-900 border border-slate-200 border-b-4 dark:border-slate-800 p-5 rounded-2xl shadow-[0_15px_35px_-5px_rgba(0,0,0,0.1),inset_0_1px_0_rgba(255,255,255,1)] dark:shadow-[0_15px_35px_-5px_rgba(0,0,0,0.4),inset_0_1px_0_rgba(255,255,255,0.05)] flex items-center gap-4 z-20 w-[340px] animate-[bounce_5s_ease-in-out_infinite]">
+              <div className="absolute top-24 right-4 bg-white dark:bg-slate-900 border border-slate-200 border-b-4 dark:border-slate-800 p-5 rounded-2xl shadow-[0_15px_35px_-5px_rgba(0,0,0,0.1),inset_0_1px_0_rgba(255,255,255,1)] dark:shadow-[0_15px_35px_-5px_rgba(0,0,0,0.4),inset_0_1px_0_rgba(255,255,255,0.05)] flex items-center gap-4 z-20 w-[340px] animate-[bounce_5s_ease-in-out_infinite] will-change-transform">
                 <div className="w-14 h-14 bg-emerald-50 dark:bg-slate-800 rounded-xl flex items-center justify-center border border-emerald-100 border-b-2 dark:border-slate-700 shrink-0 shadow-inner">
                   <MessageCircle className="w-6 h-6 text-emerald-600" />
                 </div>
@@ -131,7 +131,7 @@ export function Hero() {
               </div>
 
               {/* 3. Deal Closed */}
-              <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-slate-900 dark:bg-slate-800 border-[3px] border-slate-800 border-b-[6px] dark:border-slate-700 p-6 rounded-3xl shadow-[0_25px_50px_-5px_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.05)] flex items-center gap-5 z-30 w-[380px] hover:-translate-y-2 transition-transform duration-300">
+              <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-slate-900 dark:bg-slate-800 border-[3px] border-slate-800 border-b-[6px] dark:border-slate-700 p-6 rounded-3xl shadow-[0_25px_50px_-5px_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.05)] flex items-center gap-5 z-30 w-[380px] hover:-translate-y-2 transition-transform duration-300 will-change-transform">
                 <div className="w-16 h-16 bg-gradient-to-b from-amber-400 to-amber-600 rounded-2xl flex items-center justify-center border-2 border-amber-300 border-b-4 shrink-0 shadow-[0_5px_15px_rgba(245,158,11,0.5)]">
                   <ShieldCheck className="w-8 h-8 text-white drop-shadow-md" />
                 </div>
